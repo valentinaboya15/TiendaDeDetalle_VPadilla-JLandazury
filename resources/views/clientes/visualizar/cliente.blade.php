@@ -1,15 +1,15 @@
-@extends('welcome')
+@extends('mainAdmin')
 @section('contenido')
-<h1>LISTADO DE Usuarios</h1>
+<h1>LISTADO DE CLIENTE</h1>
 
 <div class="container">
     <div class ="row">
-    @foreach($usuarios as $c)
+    @foreach($cliente as $c)
         <div class="col-md-4">
             <div class="card" style="width: 15rem;">
                 <img src='{{url("/img/$c->foto")}}' class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title"> {{ $c->login }} </h5>
+                
                   <h5 class="card-title"> {{ $c->nombre }} </h5>
                   <h5 class="card-title"> {{ $c->apellido }} </h5>
                  
@@ -21,7 +21,7 @@
                     
                     
                 
-                    <a href="#" class="btn btn-success"> Ver Detalles </a>
+                    <a href="#" class="btn btn-success"> Actualizar </a>
                 </div>
             </div>
         </div>

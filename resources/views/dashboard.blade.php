@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('mainadmin')
 @section('contenido')
 
 <x-app-layout>

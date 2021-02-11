@@ -42,11 +42,13 @@ Route::get('catalogo/anchetas', [CatalogoController::class, 'getanchetas']);
 
 Route::get('categorias/listado', [CatalogoController::class, 'getcategoria']);
 
+Route::get('catalogo/listado_producto', [CatalogoController::class, 'listadoProducto']);
+
 //seccion carrito
 Route::get('carrito/carro', [CarritoController::class, 'getcarro']);
 
 //seccion clientes
-Route::get('clientes/visualizar/cliente', [ClientesController::class, 'getclientes'])->name('listado_clientes');
+Route::get('clientes/visualizar/cliente', [ClientesController::class, 'getclientes'])->middleware('auth')->name('listado_clientes');
 Route::get('clientes/listado', [ClientesController::class, 'listado_clientes'])->name('listado_clientes');
 Route::get('clientes/registro', [ClientesController::class, 'form_registro'])->name('formulario_registro');
 Route::post('clientes/registrar', [ClientesController::class, 'registrarCli'])->name('registrar_cliente'); 

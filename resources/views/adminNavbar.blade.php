@@ -11,33 +11,23 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Quienes Somos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url('/presentacion/nosotros')}}">Nosotros</a>
-          <a class="dropdown-item" href="{{url('/presentacion/mision')}}">Mision y Vision</a>
-          <a class="dropdown-item" href="{{url('/presentacion/ubicacion')}}">Ubicacion</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Catalogo </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url('/catalogo/desayunos')}}">Desayunos</a>
-          <a class="dropdown-item" href="{{url('/catalogo/flores')}}">Flores</a>
-          <a class="dropdown-item" href="{{url('/catalogo/peluches')}}">Peluches</a>
-          <a class="dropdown-item" href="{{url('/catalogo/anchetas')}}">Anchetas</a>
-        </div>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('/dashboard')}}" tabindex="-1" role="button" aria-disabled="true">Inicio</a>
       </li>
       
+      
+     
+    
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('/catalogo/listado_producto')}}" tabindex="-1" role="button" aria-disabled="true">Productos</a>
+      </li>
       
   
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('/facturacion/factura')}}" tabindex="-1" role="button" aria-disabled="true">Facturacion</a>
-      </li>
+      
+
+     
+
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/clientes/visualizar/cliente')}}" tabindex="-1" role="button" aria-disabled="true">Clientes</a>
       </li>

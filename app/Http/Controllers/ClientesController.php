@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\ClienteSeeder;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,9 @@ class ClientesController extends Controller
     }
 
     public function getclientes() {
-        
-        $Usuario= DB::table('usuarios')
+        $Cliente= DB::table('cliente')
         ->get();
-        return view('clientes.visualizar.cliente',['usuarios'=>$Usuario]);
+        return view('clientes.visualizar.cliente',['cliente'=>$Cliente]);
     }
 
     public function form_registro(){

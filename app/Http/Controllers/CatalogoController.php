@@ -59,4 +59,14 @@ class CatalogoController extends Controller
         
         return view('categorias.listado',['categoria'=>$Categoria]);
     }
+
+    public function listadoProducto() {
+        $Producto= DB::table('producto as pro')
+        ->join('detalle as det', 'pro.id_det', '=', 'det.id_det')
+        ->join('categoria as cate', 'pro.id_cate', '=', 'cate.id_cate')
+        ->select('pro.id_pro','cate.nombre','pro.id_cata','pro.Descripcion','pro.cant_prod','pro.foto','det.Precio')
+        ->get();
+        
+        return view('catalogo.listado_producto',['producto'=>$Producto]);
+    }
 }
