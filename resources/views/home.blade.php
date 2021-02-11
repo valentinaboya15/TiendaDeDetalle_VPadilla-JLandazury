@@ -1,4 +1,4 @@
-@extends('main')
+@extends('welcome')
 @section('contenido')
 <div class="p-3 mb-2 bg-dark text-white"><h1> Bienvenidos A La Tienda De Detalles Creaciones De Emily </h1></div>
 
