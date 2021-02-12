@@ -13,10 +13,9 @@
                  
                     <p class="card-text"> Descripcion :  {{ $p->Descripcion }} </p>
                      <p class="card-text"> Cant. Stock :  {{ $p->cant_prod }} </p>
+                     <p class="card-text"> Precio :  {{ $p->Precio }} </p>
                 
-                    <a href="#" class="btn btn-success"> Ver Detalles </a>
-                    
-                    <a href="#" class="btn btn-success"> Añadir Carrito </a>
+                     <a href="{{ url('carrito/registroCarrito') }}" class="btn btn-dark"> Añadir a carrito </a>
                 </div>
             </div>
         </div>

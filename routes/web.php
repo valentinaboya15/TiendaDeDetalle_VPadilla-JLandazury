@@ -29,23 +29,27 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [AdministracionController::class, 'getindex']);
 
+//seccion carrito
+Route::get('/carrito/carro', [CarritoController::class, 'listadoCarrito']);
+Route::get('/carrito/registroCarrito', [CarritoController::class, 'registroCarrito'])->name('registro_carrito'); 
+Route::post('/carrito/registrar', [CarritoController::class, 'registrarCart'])->name('registrar_carrito'); 
+
 //seccion catalogo
 
-Route::get('catalogo/desayunos', [CatalogoController::class, 'getdesayunos']);
+Route::get('/catalogo/desayunos', [CatalogoController::class, 'getdesayunos']);
 
-Route::get('catalogo/flores', [CatalogoController::class, 'getflores']);
+Route::get('/catalogo/flores', [CatalogoController::class, 'getflores']);
 
-Route::get('catalogo/frutales', [CatalogoController::class, 'getfrutales']);
+Route::get('/catalogo/frutales', [CatalogoController::class, 'getfrutales']);
 
-Route::get('catalogo/anchetas', [CatalogoController::class, 'getanchetas']);
+Route::get('/catalogo/anchetas', [CatalogoController::class, 'getanchetas']);
 //Route::get('catalogo/anchetas/{id_pro}', [CatalogoController::class, 'getanchetas'])->name('detalle_ancheta');
 
 Route::get('categorias/listado', [CatalogoController::class, 'getcategoria']);
 
 Route::get('catalogo/listado_producto', [CatalogoController::class, 'listadoProducto']);
 
-//seccion carrito
-Route::get('carrito/carro', [CarritoController::class, 'getcarro']);
+
 
 //seccion clientes
 Route::get('clientes/visualizar/cliente', [ClientesController::class, 'getclientes'])->middleware('auth')->name('listado_clientes');

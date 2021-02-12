@@ -17,11 +17,19 @@ class CarritoSeeder extends Seeder
             [
                 'id_cli'=>1,
                 'id_pro'=>5,
+                'Descripcion'=>'Ancheta Sorpresa-madera Amor',
+                'cant_prod'=>2,
+                'foto'=>'ancheta5.jpeg',
+                'id_det'=>1,
             ],
 
             [
                 'id_cli'=>2,
                 'id_pro'=>15,
+                'Descripcion'=>'Arreglo floral grande con vino ',
+                'cant_prod'=>2,
+                'foto'=>'flores3.jpeg',
+                'id_det'=>11,
             ],
             
             

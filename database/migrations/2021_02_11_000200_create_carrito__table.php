@@ -21,6 +21,14 @@ class CreateCarritoTable extends Migration
             $table->unsignedBigInteger('id_pro');
 
             $table->foreign('id_pro')->references('id_pro')->on('producto')->onDelete('cascade');
+            $table->unsignedBigInteger('id_det');
+
+            $table->foreign('id_det')->references('id_det')->on('detalle')->onDelete('cascade');
+
+            $table->string('Descripcion',255);
+            $table->integer('cant_prod');
+            $table->string('foto',45);
+         
             $table->timestamps();
         });
     }
