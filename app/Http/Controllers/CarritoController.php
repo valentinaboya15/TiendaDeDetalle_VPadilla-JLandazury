@@ -14,7 +14,7 @@ class CarritoController extends Controller
         ->join('producto as pro', 'cart.id_pro', '=', 'pro.id_pro')
         ->join('detalle as det', 'pro.id_det', '=', 'det.id_det')
         ->join('categoria as cate', 'pro.id_cate', '=', 'cate.id_cate')
-        ->select('cart.id_pro','cate.nombre','pro.id_cata','cart.Descripcion','cart.cant_prod','cart.foto','det.Precio')
+        ->select('cart.id_car','cate.nombre','pro.id_cata','cart.Descripcion','cart.cant_prod','cart.foto','det.Precio')
         ->get();
         return view('carrito.carro',['carrito'=>$Carrito]);
     }
@@ -38,6 +38,10 @@ class CarritoController extends Controller
         $Carrito->save();
         return view('carrito.registrar');
     }
-
-  
+  /*public function eliminarCart($id_car){
+    //    $product = Carrito::findOrFail($id_car);
+        $product->delete();
+        return redirect()->route('listadoCarrito');
+    }
+  */
 }
