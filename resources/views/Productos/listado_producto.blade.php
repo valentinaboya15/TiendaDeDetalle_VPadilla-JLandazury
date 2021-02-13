@@ -3,7 +3,7 @@
 <h1>Listado De Producto</h1>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
  
-<td> <a href="#" class="btn btn-success">Registrar  producto</a></td>
+<td> <a href="{{ url('Productos/registro') }}" class="btn btn-success">Registrar  producto</a></td>
 </div>
 
 <br>

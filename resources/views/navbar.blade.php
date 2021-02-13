@@ -63,10 +63,4 @@
 </nav>
 </br>
 
-<div class="container">
-<div class="alert alert-dark" role="alert">
-  Pantalla de mensaje... 
-  <a href="#" class="badge badge--danger">Ver Carrito</a>
 
-</div>
-</div>

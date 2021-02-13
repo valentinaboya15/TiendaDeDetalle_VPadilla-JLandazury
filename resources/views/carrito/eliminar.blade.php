@@ -1,6 +1,6 @@
-@extends('welcom')
+@extends('welcome')
 @section('contenido')
 
-<h1>^roducto Eliminado</h1>
+<h1>Producto Eliminado</h1>
 
 @stop

@@ -31,7 +31,7 @@
             <td>{{ $c->foto}}</td>
             <td> {{ $c->Precio}} </td>
             
-            <td> <a href="{{route('eliminar_carrito', $c->id_car)}}" class="btn btn-dark">Eliminar</a></td>
+            <td> <a href="{{ url('eliminar_carrito', $c->id_car) }}" class="btn btn-dark">Eliminar</a></td>
             </tr>
         
     @endforeach
@@ -43,5 +43,5 @@
 <h1>_______________________________________________________________________________________________________________________________________</h1>
 <br>
 
-<td> <a href="#" class="btn btn-dark">Pagar</a></td>
+<td> <a href="{{ url('facturacion/factura') }}" class="btn btn-dark">Pagar</a></td>
 @endsection

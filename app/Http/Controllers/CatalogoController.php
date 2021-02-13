@@ -67,6 +67,24 @@ class CatalogoController extends Controller
         ->select('pro.id_pro','cate.nombre','pro.id_cata','pro.Descripcion','pro.cant_prod','pro.foto','det.Precio')
         ->get();
         
-        return view('catalogo.listado_producto',['producto'=>$Producto]);
+        return view('Productos.listado_producto',['producto'=>$Producto]);
+    }
+
+    public function registroProducto() {
+      
+        return view('Productos.registro');
+    }
+
+    public function registrarProducto(Request $request) {
+
+        $Producto = new Producto();
+        $Producto->id_cate = $request->input('id_cate');
+        $Producto->id_cata = $request->input('id_cata');
+        $Producto->Descripcion = $request->input('Descripcion');
+        $Producto->cant_prod= $request->input('cant_prod');
+        $Producto->foto = $request->input('foto');
+        $Producto->id_det = $request->input('id_det');
+        $Producto->save();
+        return view('Productos.registrar');
     }
 }

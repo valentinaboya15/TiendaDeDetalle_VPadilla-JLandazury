@@ -20,7 +20,7 @@
      
     
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/catalogo/listado_producto')}}" tabindex="-1" role="button" aria-disabled="true">Productos</a>
+        <a class="nav-link" href="{{ url('/Productos/listado_producto')}}" tabindex="-1" role="button" aria-disabled="true">Productos</a>
       </li>
       
   
