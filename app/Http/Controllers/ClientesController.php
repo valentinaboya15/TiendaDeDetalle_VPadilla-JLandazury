@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use Database\Seeders\ClienteSeeder;
 use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -25,6 +25,27 @@ class ClientesController extends Controller
         return view('clientes.registro') ;
     }
 
+    public function form_actualizar($id_cli){
+
+        $cliente=Cliente::findOrFail($id_cli);
+      
+        return view('clientes.actualizar',compact('cliente')) ;
+    }
+    public function cli_actualizado(Request $request, $id_cli){
+
+        $Cliente=Cliente::findOrFail($id_cli);      
+        $Cliente->id_usu= $request->input('id_usu');      
+        $Cliente->nombre = $request->input('nombre');
+        $Cliente->apellido= $request->input('apellido');
+        $Cliente->cedula = $request->input('cedula');
+        $Cliente->domicilio = $request->input('domicilio');
+        $Cliente->celular = $request->input('celular');
+        $Cliente->email = $request->input('email');
+        $Cliente->genero = $request->input('genero');
+        $Cliente->foto = $request->input('foto');
+        $Cliente->save();
+        return view('clientes.actualizado');
+    }
     
 
 
@@ -47,11 +68,7 @@ class ClientesController extends Controller
     }
 
     
-    public function actualizar(){
-        return view('clientes.form_actualiza') ;
-    }
+   
 
-    public function eliminar(){
-        return view('clientes.eliminar') ;
-    }
+   
 }

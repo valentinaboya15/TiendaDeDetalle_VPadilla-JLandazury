@@ -24,7 +24,7 @@
     @foreach($producto as $c)
             <tr>
            
-            <td>{{ $c->id_pro}} </td>
+            <td>{{ $c->id}} </td>
             <td>{{ $c->nombre}} </td>
             <td>{{ $c->id_cata}} </td>
             <td> {{ $c->Descripcion}} </td>
@@ -32,7 +32,7 @@
             <td>{{ $c->foto}}</td>
             <td> {{ $c->Precio}} </td>
             
-            <td> <a href="#" class="btn btn-success">Actualizar</a></td>
+            <td> <a href="{{route('form_actualizarPro',$c->id)}}" class="btn btn-success">Actualizar</a></td>
             </tr>
         
     @endforeach

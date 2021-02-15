@@ -20,7 +20,7 @@ class CreateFacturaTable extends Migration
             $table->foreign('id_car')->references('id_car')->on('carrito')->onDelete('cascade');
             $table->unsignedBigInteger('id_pro');
 
-            $table->foreign('id_pro')->references('id_pro')->on('producto')->onDelete('cascade');
+            $table->foreign('id_pro')->references('id')->on('producto')->onDelete('cascade');
             $table->unsignedBigInteger('id_cli');
 
             $table->foreign('id_cli')->references('id_cli')->on('cliente')->onDelete('cascade');

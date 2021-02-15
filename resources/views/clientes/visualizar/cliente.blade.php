@@ -21,7 +21,7 @@
                     
                     
                 
-                    <a href="#" class="btn btn-success"> Actualizar </a>
+                    <a href="{{route('formulario_actualizar',$c->id_cli)}}" class="btn btn-success"> Actualizar </a>
                 </div>
             </div>
         </div>

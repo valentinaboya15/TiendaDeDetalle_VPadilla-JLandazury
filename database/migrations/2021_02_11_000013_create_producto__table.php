@@ -14,7 +14,7 @@ class CreateProductoTable extends Migration
     public function up()
     {
         Schema::create('producto', function (Blueprint $table) {
-            $table->bigIncrements('id_pro');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_cate');
 
             $table->foreign('id_cate')->references('id_cate')->on('categoria')->onDelete('cascade');

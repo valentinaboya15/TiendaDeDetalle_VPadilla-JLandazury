@@ -39,11 +39,11 @@ class CarritoController extends Controller
     }
 
   public function eliminarCart($id_car){
-        $Cart=Carrito::findOrFail($id_car);
-        $Cart->delete();
+        $Carrito=Carrito::findOrFail($id_car);
+        $Carrito->delete();
         return view('carrito.carro');
     }
 
-   
+  
   
 }
