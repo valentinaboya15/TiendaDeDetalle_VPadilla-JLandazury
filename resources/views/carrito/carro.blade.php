@@ -23,7 +23,7 @@
     @foreach($carrito as $c)
             <tr>
            
-            <td>{{ $c->id_car}} </td>
+            <td>{{ $c->id}} </td>
             <td>{{ $c->nombre}} </td>
             <td>{{ $c->id_cata}} </td>
             <td> {{ $c->Descripcion}} </td>
@@ -31,7 +31,7 @@
             <td>{{ $c->foto}}</td>
             <td> {{ $c->Precio}} </td>
             
-            <td> <a href="{{ url('eliminar_carrito', $c->id_car) }}" class="btn btn-dark">Eliminar</a></td>
+            <td> <a href="{{ route('eliminar_carrito',$c->id)}}" class="btn btn-dark">Eliminar</a></td>
             </tr>
         
     @endforeach
@@ -43,5 +43,5 @@
 <h1>_______________________________________________________________________________________________________________________________________</h1>
 <br>
 
-<td> <a href="{{ url('facturacion/factura') }}" class="btn btn-dark">Pagar</a></td>
+<td> <a href="{{ url('facturacion/factura')}}" class="btn btn-dark">Pagar</a></td>
 @endsection

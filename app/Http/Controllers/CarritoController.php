@@ -11,10 +11,10 @@ class CarritoController extends Controller
     
     public function listadoCarrito() {
         $Carrito= DB::table('carrito as cart')
-        ->join('producto as pro', 'cart.id_pro', '=', 'pro.id_pro')
+        ->join('producto as pro', 'cart.id', '=', 'pro.id')
         ->join('detalle as det', 'pro.id_det', '=', 'det.id_det')
         ->join('categoria as cate', 'pro.id_cate', '=', 'cate.id_cate')
-        ->select('cart.id_car','cate.nombre','pro.id_cata','cart.Descripcion','cart.cant_prod','cart.foto','det.Precio')
+        ->select('cart.id','cate.nombre','pro.id_cata','cart.Descripcion','cart.cant_prod','cart.foto','det.Precio')
       
         ->get();
         return view('carrito.carro',['carrito'=>$Carrito]);
@@ -38,10 +38,10 @@ class CarritoController extends Controller
         return view('carrito.registrar');
     }
 
-  public function eliminarCart($id_car){
-        $Carrito=Carrito::findOrFail($id_car);
-        $Carrito->delete();
-        return view('carrito.carro');
+  public function eliminarCart($id){
+        $carrito=Carrito::findOrFail($id);
+        $carrito->delete();
+        return view('carrito.eliminar');
     }
 
   

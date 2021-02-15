@@ -47,7 +47,7 @@ class CatalogoController extends Controller
     public function getanchetas() {
         $Producto= DB::table('producto as anch')
         ->join('detalle as det', 'anch.id_det', '=', 'det.id_det')
-        ->select('anch.id_pro','anch.foto','det.Tipo','anch.cant_prod','anch.Descripcion','det.Precio')
+        ->select('anch.foto','det.Tipo','anch.cant_prod','anch.Descripcion','det.Precio')
         ->where('anch.id_cate','=','1')
         ->get();
         return view('catalogo.anchetas',['producto'=>$Producto]);

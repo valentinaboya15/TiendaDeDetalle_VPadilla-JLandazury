@@ -34,7 +34,7 @@ Route::get('/', [AdministracionController::class, 'getindex']);
 Route::get('/carrito/carro', [CarritoController::class, 'listadoCarrito']);
 Route::get('/carrito/registroCarrito', [CarritoController::class, 'registroCarrito'])->name('registro_carrito'); 
 Route::post('/carrito/registrar', [CarritoController::class, 'registrarCart'])->name('registrar_carrito'); 
-Route::get('/carrito/eliminar/{id_car}', [CarritoController::class, 'eliminarCart'])->name('eliminar_carrito');
+Route::get('/carrito/eliminar/{id}', [CarritoController::class, 'eliminarCart'])->name('eliminar_carrito');
 
 //seccion factura
 Route::get('/facturacion/facturacion', [FacturacionController::class, 'facturacion']);

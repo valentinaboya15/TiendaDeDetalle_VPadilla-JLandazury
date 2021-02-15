@@ -10,7 +10,7 @@ class Carrito extends Model
    
     protected $table='carrito';
 
-    protected $primarykey='id_car';
+    protected $primarykey='id';
  
     public $timestamps=false;
 }

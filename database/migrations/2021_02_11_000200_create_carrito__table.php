@@ -14,7 +14,7 @@ class CreateCarritoTable extends Migration
     public function up()
     {
         Schema::create('carrito', function (Blueprint $table) {
-            $table->bigIncrements('id_car');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_cli');
 
             $table->foreign('id_cli')->references('id_cli')->on('cliente')->onDelete('cascade');

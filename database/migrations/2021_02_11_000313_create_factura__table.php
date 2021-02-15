@@ -17,7 +17,7 @@ class CreateFacturaTable extends Migration
             $table->bigIncrements('codigoF');
             $table->unsignedBigInteger('id_car');
 
-            $table->foreign('id_car')->references('id_car')->on('carrito')->onDelete('cascade');
+            $table->foreign('id_car')->references('id')->on('carrito')->onDelete('cascade');
             $table->unsignedBigInteger('id_pro');
 
             $table->foreign('id_pro')->references('id')->on('producto')->onDelete('cascade');
