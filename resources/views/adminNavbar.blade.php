@@ -33,13 +33,22 @@
       </li>
     </ul>
    
-      <nav class="navbar navbar-dark bg-dark">
-      <form class="form-inline">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button  class="btn btn-outline-light" type="submit">Buscar</button>
-    </form>
-</nav>
-    
+     <nav>
+    <div class="col">
+        <form action="{{ route('searchP')}}" method="POST"> 
+            @csrf
+            <div class="row" id="divBuscar">  
+                <form class="form-inline my-1">
+                    <div class="md-form form-sm my-0">
+                        <input id="txtBuscar" name="txtBuscar" class="form-control form-control-sm-2 mr-sm-3 mb-0" type="text" placeholder="Buscar"
+                        aria-label="Buscar">
+                    </div>
+                    <button class="btn btn-dark" type="submit">Buscar</button>
+                </form>
+            </div> 
+        </form> 
+    </div><br>
+     </nav>
     
   
   </div>

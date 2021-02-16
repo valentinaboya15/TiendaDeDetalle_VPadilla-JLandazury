@@ -1,6 +1,11 @@
 @extends('welcome')
 @section('contenido')
+
+<div align="center">
 <h1>LISTADO DE CATEGORIA</h1>
+</div>
+<br>
+
 <div class="container">
     <div class ="row">
     @foreach($categoria as $a)

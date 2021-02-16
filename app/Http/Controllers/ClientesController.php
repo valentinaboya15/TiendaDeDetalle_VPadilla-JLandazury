@@ -22,7 +22,7 @@ class ClientesController extends Controller
     }
 
     public function form_registro(){
-        return view('clientes.registro') ;
+        return view('clientes.registroCli') ;
     }
 
     public function form_actualizar($id_cli){
@@ -51,24 +51,26 @@ class ClientesController extends Controller
 
     public function registrarCli(Request $request) {
 
-        $Usuario = new Cliente();
-        $Usuario->id_rol = $request->input('id_rol');
-        $Usuario->login = $request->input('login');
-        $Usuario->Password = $request->input('Password');
-        $Usuario->nombre = $request->input('nombre');
-        $Usuario->apellido= $request->input('apellido');
-        $Usuario->cedula = $request->input('cedula');
-        $Usuario->domicilio = $request->input('domicilio');
-        $Usuario->celular = $request->input('celular');
-        $Usuario->email = $request->input('email');
-        $Usuario->genero = $request->input('genero');
-        $Usuario->foto = $request->input('foto');
-        $Usuario->save();
-        return view('clientes.registrar');
+        $Client = new Cliente();
+        $Client->id_usu= $request->input('id_usu');      
+        $Client->nombre = $request->input('nombre');
+        $Client->apellido= $request->input('apellido');
+        $Client->cedula = $request->input('cedula');
+        $Client->domicilio = $request->input('domicilio');
+        $Client->celular = $request->input('celular');
+        $Client->email = $request->input('email');
+        $Client->genero = $request->input('genero');
+        $Client->foto = $request->input('foto');
+        $Client->save();
+        return view('clientes.registrarCli');
     }
 
     
-   
+    public function eliminarCli($id_cli){
+        $client=Cliente::findOrFail($id_cli);
+        $client->delete();
+        return view('clientes.eliminarCli');
+    }
 
    
 }

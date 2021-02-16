@@ -2,8 +2,8 @@
 @section('contenido')
 
 <div class="container">
-<h1> Actualizar Datos de Cliente </h1>
-    <form action="{{ url('clientes/actualizado',$cliente->id_cli) }}" method="POST">
+<h1> Registrar Datos de Cliente </h1>
+    <form action="{{ url('clientes/registrarCli') }}" method="POST">
         @csrf
 
       
@@ -43,9 +43,22 @@
 
       
             
-        <button type="submit" class="btn btn-success">Registrar </button><br><br>
+<button type="submit" class="btn btn-primary" > Registrar </button> 
+
+<button type="reset" class="btn btn-danger">Borrar</button>
+
+<td> <a href="{{ url('clientes/visualizar/cliente')}}" class="btn btn-success">Cancelar</a></td>
+   
 
     </form>
     
-    <td> <a href="{{ url('clientes/visualizar/cliente')}}" class="btn btn-success">Cancelar</a></td>
+   
 @endsection
+       
+       
+       
+       
+       
+       
+   
+ 

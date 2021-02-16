@@ -6,6 +6,9 @@ use App\Models\Producto;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+use App\Exports\ProductosExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class ProductoController extends Controller
 {
 
@@ -54,5 +57,38 @@ class ProductoController extends Controller
         $Product->id_det = $request->input('id_det');
         $Product->save();
         return view('Productos.actualizadoPro');
+    }
+
+    public function exportarExcel(){
+
+        return Excel::download(new ProductosExport, 'productosdisponibles.xlsx');  
+        
+    }
+
+    public function eliminarProd($id){
+        $productos=Producto::findOrFail($id);
+        $productos->delete();
+        return view('Productos.eliminarPro');
+    }
+
+  
+
+    public function buscarProducto(Request $request){
+        $nomb = $request->input('txtBuscar');
+        if($nomb == ""){
+            $Producto = DB::table('producto as prod')
+            ->join('categoria as cate', 'prod.id_cate', '=', 'cate.id_cate')
+                ->orderby ('cant_prod','desc')
+                ->get();
+        }else{
+            $Producto = DB::table('producto as prod')
+            ->join('categoria as cate', 'prod.id_cate', '=', 'cate.id_cate')
+            ->join('detalle as det', 'prod.id_det', '=', 'det.id_det')
+            
+                ->where('Descripcion','like',"%$nomb%")
+                ->orderby ('cant_prod','asc')
+                ->get();
+        }
+        return view('Productos.buscar',['producto' => $Producto]);
     }
 }

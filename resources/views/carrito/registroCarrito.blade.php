@@ -2,7 +2,7 @@
 @section('contenido')
 
 <div class="container">
-<h1> Registro de compras </h1>
+<h1> Confirme su compra </h1>
     <form action="{{ url('carrito/registrar') }}" method="POST">
         @csrf
 

@@ -40,6 +40,7 @@ Route::get('/carrito/eliminar/{id}', [CarritoController::class, 'eliminarCart'])
 Route::get('/facturacion/facturacion', [FacturacionController::class, 'facturacion']);
 Route::get('/facturacion/factura', [FacturacionController::class, 'getfactura'])->name('factura_carrito');  
 Route::post('/facturacion/pagar', [FacturacionController::class, 'pagoCarrito'])->name('Pago_Carrito'); 
+
 //seccion catalogo
 
 Route::get('/catalogo/desayunos', [CatalogoController::class, 'getdesayunos']);
@@ -55,12 +56,17 @@ Route::get('/Productos/registro', [ProductoController::class, 'registroProducto'
 Route::post ('/Productos/registrar', [ProductoController::class, 'registrarProducto'])->name('registrar_producto'); 
 Route::get('/Productos/actualizarPro/{id_pro}', [ProductoController::class, 'form_actualizarPro'])->name('form_actualizarPro');
 Route::post('/Productos/actualizadoPro/{id_pro}', [ProductoController::class, 'pro_actualizado'])->name('actualizado_pro');
+Route::post('/Productos/buscar',[ProductoController::class, 'buscarProducto'])->name('busprod');
+Route::post('/Productos/search', [ProductoController::class, 'buscarProducto'])->name('searchP');
+Route::get('Productos/exportarExcel', [ProductoController::class, 'exportarExcel'])->name('exportar_Excel');
+Route::get('/Productos/eliminarPro/{id}', [ProductoController::class, 'eliminarProd'])->name('eliminar_producto');
 
 //seccion clientes
 Route::get('clientes/visualizar/cliente', [ClientesController::class, 'getclientes'])->middleware('auth')->name('listado_clientes');
 Route::get('clientes/listado', [ClientesController::class, 'listado_clientes'])->name('listado_clientes');
-Route::get('clientes/registro', [ClientesController::class, 'form_registro'])->name('formulario_registro');
-Route::post('clientes/registrar', [ClientesController::class, 'registrarCli'])->name('registrar_cliente'); 
+Route::get('clientes/registroCli', [ClientesController::class, 'form_registro'])->name('formulario_registro');
+Route::post('clientes/registrarCli', [ClientesController::class, 'registrarCli'])->name('registrar_cliente'); 
 Route::get('clientes/actualizar/{id_cli}', [ClientesController::class, 'form_actualizar'])->name('formulario_actualizar');
 Route::post('clientes/actualizado/{id_cli}', [ClientesController::class, 'cli_actualizado'])->name('actualizado_cli');
+Route::get('/clientes/eliminarCli/{id_cli}', [ClientesController::class, 'eliminarCli'])->name('eliminar_cliente');
 //seccion facturacion

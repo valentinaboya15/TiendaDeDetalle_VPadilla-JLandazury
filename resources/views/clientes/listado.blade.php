@@ -1,8 +1,10 @@
 @extends('welcome')
 @section('contenido')
-
+<div align="center">
 <h1> Listado de Clientes </h1>
 
+</div>
+<br>
 
 <table class="table">
     <thead>

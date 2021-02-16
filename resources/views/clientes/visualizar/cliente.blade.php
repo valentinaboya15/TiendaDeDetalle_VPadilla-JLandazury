@@ -1,6 +1,17 @@
 @extends('mainAdmin')
 @section('contenido')
+
+<div align="center">
 <h1>LISTADO DE CLIENTE</h1>
+</div>
+<br>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+ 
+<td> <a href="{{ url('clientes/registroCli') }}" class="btn btn-dark">Registrar  producto</a></td>
+</div>
+<br>
+<br>
 
 <div class="container">
     <div class ="row">
@@ -22,6 +33,7 @@
                     
                 
                     <a href="{{route('formulario_actualizar',$c->id_cli)}}" class="btn btn-success"> Actualizar </a>
+                    <td> <a href="{{ route('eliminar_cliente',$c->id_cli)}}" class="btn btn-danger">Eliminar</a></td>
                 </div>
             </div>
         </div>

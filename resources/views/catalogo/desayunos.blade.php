@@ -1,8 +1,28 @@
 @extends('welcome')
 @section('contenido')
+
+<div align="center">
 <h1>DESAYUNOS SORPRESAS</h1>
+</div>
+<br>
 
 <div class="container">
+
+<div class="col">
+        <form action="{{ route('searchP')}}" method="POST"> 
+            @csrf
+            <div class="row" id="divBuscar">  
+                <form class="form-inline my-1">
+                    <div class="md-form form-sm my-0">
+                        <input id="txtBuscar" name="txtBuscar" class="form-control form-control-sm-2 mr-sm-3 mb-0" type="text" placeholder="Buscar"
+                        aria-label="Buscar">
+                    </div>
+                    <button class="btn btn-dark" type="submit">Buscar</button>
+                </form>
+            </div> 
+        </form> 
+    </div><br>
+
     <div class ="row">
     @foreach($producto as $p)
         <div class="col-md-4">

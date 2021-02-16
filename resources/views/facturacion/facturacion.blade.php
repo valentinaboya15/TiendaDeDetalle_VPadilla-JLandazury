@@ -1,7 +1,9 @@
 @extends('welcome')
 @section('contenido')
+<div align="center">
 <h1>LISTADO DE CARRITO</h1>
-
+</div>
+<br>
 
 
 <br>
